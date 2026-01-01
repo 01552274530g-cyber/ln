@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة  من s</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+:root{
+    --bg: #050508;
+    --card: linear-gradient(160deg, #0b0c10, #060608);
+    --red: #ff2c55;
+    --violet: #7c4dff;
+    --text: #f5f5f5;
+    --muted: #8b8f98;
+    --line: rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Cairo",sans-serif;background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;direction:rtl;overflow-x:hidden;position:relative;}
+body::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);z-index:-1;}
+.header{position:fixed;top:0;width:100%;padding:18px;display:flex;justify-content:center;background:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,0));backdrop-filter:blur(6px);z-index:100;}
+.logo{color:var(--red);font-weight:900;letter-spacing:1px;}
+.timer{margin-top:75px;color:var(--muted);font-size:14px;}
+.container{margin-top:25px;max-width:920px;width:90%;background:var(--card);padding:50px;border-radius:26px;color:var(--text);box-shadow:0 40px 120px rgba(0,0,0,.9), inset 0 0 0 1px rgba(255,255,255,.04);animation:coldIn .9s ease;position:relative;z-index:5;overflow:hidden;}
+@keyframes coldIn{from{opacity:0;transform:translateY(60px) scale(.94);filter:blur(6px);}to{opacity:1;transform:none;filter:none;}}
+h1{text-align:center;font-size:38px;font-weight:900;margin-bottom:45px;}
+h1::after{content:"";display:block;width:140px;height:3px;margin:20px auto 0;background:linear-gradient(90deg,var(--red),var(--violet));}
+p{font-size:18.5px;line-height:2.3;margin-bottom:24px;transition:.35s;opacity:0;}
+p:hover{transform:translateX(-6px);filter:brightness(1.2);}
+.highlight{background:linear-gradient(135deg,rgba(255,44,85,.18),rgba(124,77,255,.12));border-right:7px solid var(--red);padding:20px 24px;border-radius:16px;font-weight:900;animation:shake 0.6s;}
+.soft{color:var(--muted);font-style:italic;}
+.end{margin-top:55px;padding-top:35px;border-top:1px dashed var(--line);font-size:21px;font-weight:900;}
+.close-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--red);padding:12px 34px;border-radius:40px;font-weight:900;cursor:pointer;margin:45px auto 0;display:block;transition:.35s;}
+.close-btn:hover{background:var(--red);color:#000;}
+.footer{width:100%;text-align:center;padding:30px 15px;margin-top:50px;color:var(--muted);font-size:14px;}
+#heartScreen{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:9999;transition:opacity .6s ease;}
+#heartScreen.show{opacity:1;}
+.heart{font-size:120px;animation:heartBeat 1.2s infinite;}
+@keyframes heartBeat{0%{transform:scale(1);}25%{transform:scale(1.15);}50%{transform:scale(1);}75%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes shake{0%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}100%{transform:translateX(0);}}
+.lightning{animation:flash 0.15s ease-in-out 0s 4;}
+@keyframes flash{0%{background-color:var(--bg);}50%{background-color:#111;}100%{background-color:var(--bg);}}
+.message-popup{position:fixed;bottom:20px;right:20px;background:var(--red);color:#000;padding:15px 25px;border-radius:12px;font-weight:900;opacity:0;transition:opacity .5s;z-index:9999;}
+.message-popup.show{opacity:1;}
+.floating-word{position:absolute;color:var(--red);font-weight:900;font-size:20px;animation:floating 2s ease-out forwards;}
+@keyframes floating{0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-100px);}}
+.background-heart{position:fixed;width:15px;height:15px;background:red;border-radius:50%;opacity:0.7;pointer-events:none;animation:floatingHeart linear infinite;}
+@keyframes floatingHeart{0%{transform:translateY(0) scale(1);}100%{transform:translateY(-100vh) scale(0.5);opacity:0;}}
+@media(max-width:600px){.container{padding:30px 22px;}h1{font-size:28px;}p{font-size:16.5px;}}
+</style>
+</head>
+<body>
+<header class="header">
+    <span class="logo">⚠ رسالة غير قابلة للنقاش نهائي</span>
+</header>
+<div class="timer">الرسالة هتتقفل خلال <span id="seconds">60</span> ثانية استني لغيت الاخر </div>
+<div class="container" id="messageContainer">
+<h1>رسالة بجد</h1>
+<p class="highlight">وربنا بجد أنا زعلانة منك بجد ومش بهزر، بسبب الحاجات اللي بتعملها دي.</p>
+<p>مش هتخف عبط بقى شوية ونبقى زي الناس الكبيرة؟ كل شوية تزعلني منك، كل مرة بنفس السبب، وماتقوليش إيه هو… إنت عارفه.</p>
+<p>والمرة دي بسبب الاستوري دي. استوري تنزلها بروح ماما اللي بحبها، نفسي تيجي تشوف ابنها بيعمل إيه وتديله علقة، تمام بجد، ساعتها هفرح خالص.</p>
+<p>وكمان بزعل لما تقعد تحس إن أنا مش عايزة أكلمك، وإنت عارف اللي فيها. طب ليه بتستعبط؟ هااااااااااااا ليه؟</p>
+<p>ليه بتحس إنك تقيل؟ هو إنت فعلاً تقيل بس ده مش الموضوع. أنا عمري ما حسّيت إنك تقيل ولا حاجة، بالعكس، وإنت عارف الكلام ده، فبطل دروشة.</p>
+<p class="highlight">عشان بجد بجد والله أنا قربت أجيب آخري منك، ومن أفعالك.</p>
+<p>ولآخر مرة بجد هعاتبك، المرة دي شوفت أنا اتقفلت منك إزاي، المرة الجاية هتبقى أفظع، ويمكن كمان ما يكونش فيه مرة جاية.</p>
+<p>هتقولي مقدرش على الحوار ده؟ لا هقدر عادي، وحتى لو مش هقدر، هحاول لغاية ما فعلاً أنساك.</p>
+<p>وكله من اللي إنتي بتعمله عمومًا. وبزعل منك عشان إنت مش فاكر أي حاجة بقولها لك.</p>
+<p>كل اللي إنت فالح فيه: عايزة بوسة بوسة، كأني مراتك! إنت عبيط يا ابني ولا إيه؟</p>
+<p>أجي أقوله إيه؟ يقولي إيه؟ أقوله مش هتيجي تقرأ فاتحة؟ يقولي مش بعرف! أحا… أحا… لا أحا كمان مرة!</p>
+<p>يعني بجد الحاجات اللي بتعملها دي صح؟ هاااا؟</p>
+<p>عمومًا براحتك… براحتك خالص. كنت بدل الكلام ده المفروض أبعتلك حاجة تانية، بس كله بسببك.</p>
+<p>شوف وصلتنا لإيه؟ كله بسببك.</p>
+<p class="soft">عمومًا فكك، كده كده مافيش حاجة هتتغير. بس حبيت أقولك إنك مش تقيل ولا حاجة عليا، وأنا بحب الكلام معاك.</p>
+<p>ولو في أي حاجة، تعالي قولي. لو عندك أي مشكلة، أو متضايق من حاجة، تعالي قولي… أنا موجودة.</p>
+<p>وإنت عارف إني بحب أتكلم معاك، وإنك شخص برتاح معاه، بس بزعل لما تيجي تقولي الكلام اللي إنت بتقوله ده.</p>
+<p>نفسي بجد لمره واحده تفهمنييييييييييي اي ده اصلا انت فاهمني بس بتستعبط بس اقولك اي يالي تعب قلبي معاك اقولك اييييييييي</p>
+<p>اعمل فيك فيك اي يت تخرت صبري اعمل فيك اي</p>
+<p>اعمل فيك اي دلوقتي يا اذكي اخواتك اعمل دلوقتي مابقتش زعلانه منك اعمل فيك اي مع اني كنت عايزه انساك و كده يعني او افضل زعلانه بس اعمل اي مش بقدر اقعد زعلانه منك كتير اثلا ا.</p>
+<p>  يس بجد يا وزتي احلا حاجه بحبها فيك انت وطبعك الي هيجنني في يوم ده ❤️❤️❤️❤️</p>
+<p>وبعدين ياابني مش حوار شايفك ارجوز بس بجد بحب اضحك معاك مش عليكي يا اخرت صبري يا صبرييييييييييي❤️❤️❤️❤️</p>
+<p>حبيبت بس اقولك كل سنه و انت طيب و اوشفك كده مهندس قد الدنيا و اشوفك دايما احسن الناس و اتنمي تكوني السنه الجديده عليك خير و سعاده و صحه و تحقق كل الي عايزه فيها كلهههه كلههههه❤️❤️</p>
+<p>بجد يا يسفو اتمني انك تهتم بمذاكرتك شويه ياروحي عشان عايزه اشوفك كده اشطر كتكوت مهندس في الدنيا ❤️❤️</p>
+<p>و بطل تقعد تزعق  فيااااااااااااااااااااااا بطل ده انا حتي حتي يعني عمري ماعملتهاااا تخيل </p>
+<p>ده انا ياابني طيبه و عسل و سكر و كل حاجه حلوه اصلا وانت كمان بردو طيب و سكر يا اخواتي يا ناس علي الواد السكر يا ناس ❤️❤️</p>
+<p>يلا ياروحي كوتي شطور كوتي قمور كوتي يا حياتي يا كيوتي, ❤️❤️❤️❤️</p>
+<p class="end">بس كده… أنا زعلت منك في أهم يوم في السنة. شوف بقى أعمل فيك إيه. ده انا حتي ب فاتحه باء ب كسره باء ر ضمه راء ❤️❤️❤️❤️</p>
+<button class="close-btn" onclick="closePage()">اقفل الصفحة</button>
+</div>
+<footer class="footer">©2025\12\31 — الكلام ده اتقال مرة واحدة وبس</footer>
+<div id="heartScreen"><div class="heart">❤️</div></div>
+<div id="popup" class="message-popup">❤️❤️ ب   ح   ب   ❤️❤️</div>
+<audio id="bgSound" src="sound.mp3"></audio>
+<script>
+const paragraphs = document.querySelectorAll('#messageContainer p');
+let paraIndex = 0;
+function showParagraph(){
+    if(paraIndex < paragraphs.length){
+        let p = paragraphs[paraIndex];
+        p.style.opacity='1';
+        if(p.classList.contains('highlight')) p.style.animation='shake 0.6s';
+        if(paraIndex===2) document.body.classList.add('lightning');
+        paraIndex++;
+        setTimeout(showParagraph, 800);
+        createFloatingWord(p);
+    }
+}
+showParagraph();
+function createFloatingWord(p){
+    const word = document.createElement('span');
+    word.className='floating-word';
+    word.textContent='❤️';
+    word.style.left=Math.random()*80+'%';
+    word.style.top=Math.random()*80+'%';
+    document.body.appendChild(word);
+    setTimeout(()=>word.remove(),2000);
+}
+let time = 180;
+const sec = document.getElementById("seconds");
+const timer = setInterval(()=>{
+    time--;
+    sec.textContent = time;
+    if(time <= 5){document.body.classList.add('lightning');window.scrollBy(0,2);}
+    if(time <= 0){
+        clearInterval(timer);
+        showHeart();
+    }
+},1000);
+function showHeart(){
+    document.getElementById('heartScreen').classList.add('show');
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+    setTimeout(()=>{
+        window.close();
+        history.back();
+    },2000);
+}
+document.addEventListener("click",()=>{
+    const sound = document.getElementById("bgSound");
+    sound.volume=0.15;
+    sound.play();
+},{once:true});
+function createBackgroundHearts(count=30){
+  for(let i=0;i<count;i++){
+    const heart = document.createElement('div');
+    heart.className='background-heart';
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.width=heart.style.height=10+Math.random()*15+'px';
+    heart.style.animationDuration=(4+Math.random()*4)+'s';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),8000);
+  }
+}
+setInterval(()=>createBackgroundHearts(3),500);
+</script>
+</body>
+</html>
